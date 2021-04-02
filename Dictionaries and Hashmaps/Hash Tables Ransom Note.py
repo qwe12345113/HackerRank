@@ -26,14 +26,15 @@ def checkMagazine(s1, s2):
         return 'Yes'
     else:
         return 'No'
-
 if __name__ == '__main__':
-    # m = int(mn[0])
-    #
-    # n = int(mn[1])
+    mn = input().split()
 
-    magazine = 'ive got a lovely bunch of coconuts'.rstrip().split()
+    m = int(mn[0])
 
-    note = 'ive got some coconuts'.rstrip().split()
+    n = int(mn[1])
+
+    magazine = input().rstrip().split()
+
+    note = input().rstrip().split()
 
     print(checkMagazine(magazine, note))

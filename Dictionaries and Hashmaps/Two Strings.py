@@ -11,22 +11,33 @@ def twoStrings(s1, s2):
     tmp = {}
     # make dict
     for i, val in enumerate(s1):
-        tmp[val] = i + 1
+        tmp[val] = i
+
+    no = 0
     yes = 0
     for c in s2:
-        if c in tmp:
-            yes += 1
+        try:
+            if tmp[c]:
+                yes += 1
+        except:
+            no += 1
 
     if yes != 0:
         return 'YES'
     else:
         return 'NO'
-
 if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    s1 = 'hi'
+    q = int(input())
 
-    s2 = 'world'
+    for q_itr in range(q):
+        s1 = input()
 
-    result = twoStrings(s1, s2)
-    print(result)
+        s2 = input()
+
+        result = twoStrings(s1, s2)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
