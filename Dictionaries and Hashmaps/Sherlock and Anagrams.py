@@ -28,20 +28,13 @@ def sherlockAndAnagrams(s):
                 cnt[subs] = 1
             res += cnt[subs] - 1
             print(cnt[subs] - 1)
-        # for dd in cnt:
-        #     if 1 < cnt[dd]:
-        #         res += cnt[dd]-1
     return res
 
 if __name__ == '__main__':
-    # fptr = open(os.environ['OUTPUT_PATH'], 'w')
-    # q = int(input())
-    # for q_itr in range(q):
-    #     s = input()
-    #     result = sherlockAndAnagrams(s)
-    #     fptr.write(str(result) + '\n')
-    # fptr.close()
-    s = 'cdcd'
-
-    result = sherlockAndAnagrams(s)
-    print(result)
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    q = int(input())
+    for q_itr in range(q):
+        s = input()
+        result = sherlockAndAnagrams(s)
+        fptr.write(str(result) + '\n')
+    fptr.close()    
